@@ -4,6 +4,11 @@ public class Ora {
 	
 	private int h, m;
 	
+	public Ora (int h, int m) {
+		setH(h);
+		setM(m);
+	}
+	
 	
 	public int getH() {
 		return h;
