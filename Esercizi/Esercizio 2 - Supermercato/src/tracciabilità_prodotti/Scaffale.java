@@ -12,33 +12,64 @@ public class Scaffale {
 	public void setCapienza(int capienza) {
 		if (capienza < 1)
 			capienza = 1;
-		if (capienza < this.capienza) // Per semplicità gli scaffali si possono
+		if (capienza < this.capienza) { // Per semplicità gli scaffali si
+										// possono
 										// allargare ma non restringere
 			capienza = this.capienza;
+			System.out
+					.println("Errore: Non ho potuto ridurre la dimensione dello scaffale");
+		}
 		this.capienza = capienza;
 	}
 
-	public ProdottoDelSupermercato[] getProdottiScaffale() {
-		return prodottiScaffale;
+	public ProdottoDelSupermercato getProdotto(int i) {
+		if (i >= 0 && i <= capienza)
+			return prodottiScaffale[i];
+		return new ProdottoDelSupermercato("NULL", 0);
 	}
 
-	public void setProdottiScaffale(ProdottoDelSupermercato[] prodottiScaffale) {
-		if (prodottiScaffale.length <= getCapienza())
-			this.prodottiScaffale = prodottiScaffale;
+	public void setProdotto(int posizione, ProdottoDelSupermercato prodotto) {
+		if (posizione <= capienza && posizione >= 0)
+			this.prodottiScaffale[posizione] = prodotto;
 		else
-			System.out.println("Errore: Troppi prodotti per lo scaffale");
+			System.out.println("Errore: indice fuori intervallo");
+	}
+
+	public Scaffale(int capienza) {
+		super();
+		setCapienza(capienza);
+		this.prodottiScaffale = new ProdottoDelSupermercato[capienza];
 	}
 
 	public Scaffale(int capienza, ProdottoDelSupermercato... prodotti) {
 		super();
 		setCapienza(capienza);
-		setProdottiScaffale(prodotti);
+		this.prodottiScaffale = new ProdottoDelSupermercato[capienza];
+
+		if (prodotti.length <= capienza) {
+			for (int i = 0; i < prodotti.length; i++) {
+				this.prodottiScaffale[i] = prodotti[i];
+			}
+		} else
+			System.out
+					.println("Troppi prodotti per lo scaffale, non sono stati aggiunti");
 
 	}
-	
-	public ProdottoDelSupermercato prodottoDaCodice(String cod) {
-		// TODO: Restituire il prodotto a partire dal codice
-		return new ProdottoDelSupermercato("NULL",0);
+
+	public int numProdottoDaCodice(String cod) {
+		for (int i = 0; i < prodottiScaffale.length; i++) {
+			if (prodottiScaffale[i].getCod() == cod)
+				return i;
+		}
+		return -1;
 	}
 
+	public int cambiaGiacenza(int i, int differenza) {
+		if (i >= 0 && i <= capienza) {
+			int a = prodottiScaffale[i].getGiacenza();
+			prodottiScaffale[i].setGiacenza(a + differenza);
+			return (prodottiScaffale[i].getGiacenza() - a);
+		}
+		return 0;
+	}
 }

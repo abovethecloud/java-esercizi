@@ -3,7 +3,7 @@ package tracciabilità_prodotti;
 public class ProdottoDelSupermercato {
 
 	private String cod;
-	private int volume;
+	private int giacenza;
 
 	public String getCod() {
 		return cod;
@@ -13,20 +13,20 @@ public class ProdottoDelSupermercato {
 		this.cod = cod;
 	}
 
-	public int getVolume() {
-		return volume;
+	public int getGiacenza() {
+		return giacenza;
 	}
 
-	public void setVolume(int volume) {
-		if (volume < 0)
-			volume = 0;
-		this.volume = volume;
+	public void setGiacenza(int giacenza) {
+		if (giacenza < 0)
+			giacenza = 0;
+		this.giacenza = giacenza;
 	}
 
-	public ProdottoDelSupermercato(String cod, int volume) {
+	public ProdottoDelSupermercato(String cod, int giacenza) {
 		super();
 		setCod(cod);
-		setVolume(volume);
+		setGiacenza(giacenza);
 	}
 
 }
