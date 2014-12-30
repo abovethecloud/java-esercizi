@@ -39,7 +39,7 @@ public class Scaffale {
 		super();
 		setCapienza(capienza);
 		this.prodottiScaffale = new ProdottoDelSupermercato[capienza];
-		
+
 		for (int i = 0; i < prodottiScaffale.length; i++) {
 			prodottiScaffale[i] = new ProdottoDelSupermercato("NULL", 0);
 		}
@@ -58,7 +58,7 @@ public class Scaffale {
 		} else {
 			System.out
 					.println("Troppi prodotti per lo scaffale, non sono stati aggiunti");
-						
+
 			for (int i = 0; i < prodottiScaffale.length; i++) {
 				prodottiScaffale[i] = new ProdottoDelSupermercato("NULL", 0);
 			}
@@ -82,7 +82,7 @@ public class Scaffale {
 		}
 		return 0;
 	}
-	
+
 	public int contaGiacenzeScaff(String cod) {
 		// TODO: contare le giacenze dello scaffale
 		int totGiacenze = 0;
