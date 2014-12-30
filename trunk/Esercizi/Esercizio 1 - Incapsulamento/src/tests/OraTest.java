@@ -11,6 +11,8 @@ public class OraTest {
 		Ora ora3 = new Ora(-5, 62);
 		
 		System.out.println(ora2.getDiffMinuti(ora3));
+		System.out.println(ora2.getDiffMinuti(ora1));
+
 		
 	}
 	
