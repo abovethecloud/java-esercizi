@@ -28,7 +28,7 @@ public class ProdottoDelSupermercato {
 		setCod(cod);
 		setGiacenza(giacenza);
 	}
-	
+
 	public void importProduct(ProdottoDelSupermercato prodotto) {
 		setCod(prodotto.getCod());
 		setGiacenza(prodotto.getGiacenza());

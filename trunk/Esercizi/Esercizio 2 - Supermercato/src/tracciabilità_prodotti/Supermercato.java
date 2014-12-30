@@ -42,13 +42,14 @@ public class Supermercato {
 
 	}
 
-	public void setProdotto(int nScaffale, int posizione, ProdottoDelSupermercato prodotto) {
-		
+	public void setProdotto(int nScaffale, int posizione,
+			ProdottoDelSupermercato prodotto) {
+
 		if (nScaffale >= 0 && nScaffale < scaffaliSupermercato.length)
 			scaffaliSupermercato[nScaffale].setProdotto(posizione, prodotto);
-		
+
 	}
-	
+
 	public int contaGiacenzeSup(String cod) {
 		// TODO: contare le giacenze nel supermercato
 		int totGiacenze = 0;
@@ -57,7 +58,5 @@ public class Supermercato {
 		}
 		return totGiacenze;
 	}
-	
-	
-	
+
 }
