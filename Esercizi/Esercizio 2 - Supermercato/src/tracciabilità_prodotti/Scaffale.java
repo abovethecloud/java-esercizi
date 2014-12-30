@@ -29,8 +29,8 @@ public class Scaffale {
 	}
 
 	public void setProdotto(int posizione, ProdottoDelSupermercato prodotto) {
-		if (posizione <= capienza && posizione >= 0)
-			this.prodottiScaffale[posizione] = prodotto;
+		if (posizione < capienza && posizione >= 0)
+			this.prodottiScaffale[posizione].importProduct(prodotto);
 		else
 			System.out.println("Errore: indice fuori intervallo");
 	}
@@ -39,6 +39,10 @@ public class Scaffale {
 		super();
 		setCapienza(capienza);
 		this.prodottiScaffale = new ProdottoDelSupermercato[capienza];
+		
+		for (int i = 0; i < prodottiScaffale.length; i++) {
+			prodottiScaffale[i] = new ProdottoDelSupermercato("NULL", 0);
+		}
 	}
 
 	public Scaffale(int capienza, ProdottoDelSupermercato... prodotti) {
@@ -48,11 +52,17 @@ public class Scaffale {
 
 		if (prodotti.length <= capienza) {
 			for (int i = 0; i < prodotti.length; i++) {
-				this.prodottiScaffale[i] = prodotti[i];
+				prodottiScaffale[i] = new ProdottoDelSupermercato("NULL", 0);
+				this.prodottiScaffale[i].importProduct(prodotti[i]);
 			}
-		} else
+		} else {
 			System.out
 					.println("Troppi prodotti per lo scaffale, non sono stati aggiunti");
+						
+			for (int i = 0; i < prodottiScaffale.length; i++) {
+				prodottiScaffale[i] = new ProdottoDelSupermercato("NULL", 0);
+			}
+		}
 
 	}
 
@@ -71,5 +81,15 @@ public class Scaffale {
 			return (prodottiScaffale[i].getGiacenza() - a);
 		}
 		return 0;
+	}
+	
+	public int contaGiacenzeScaff(String cod) {
+		// TODO: contare le giacenze dello scaffale
+		int totGiacenze = 0;
+		for (int i = 0; i < prodottiScaffale.length; i++) {
+			if (prodottiScaffale[i].getCod().equals(cod))
+				totGiacenze += prodottiScaffale[i].getGiacenza();
+		}
+		return totGiacenze;
 	}
 }
