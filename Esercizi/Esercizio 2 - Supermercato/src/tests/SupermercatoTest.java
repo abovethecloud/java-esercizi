@@ -11,8 +11,7 @@ public class SupermercatoTest {
 		ProdottoDelSupermercato prod2 = new ProdottoDelSupermercato("COD2", -13);
 		ProdottoDelSupermercato prod3 = new ProdottoDelSupermercato("COD1", 20);
 		ProdottoDelSupermercato prod4 = new ProdottoDelSupermercato("COD1", 60);
-		ProdottoDelSupermercato prod5 = new ProdottoDelSupermercato("COD5", 100);
-		ProdottoDelSupermercato prod6 = new ProdottoDelSupermercato("COD6", 40);
+
 		
 		Supermercato sup1 = new Supermercato(-1, 0);
 		Supermercato sup2 = new Supermercato(5, 10);
