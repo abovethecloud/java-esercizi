@@ -1,0 +1,229 @@
+<class-diagram version="1.0.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="7" corner="BOTTOM_RIGHT" language="java" name="drawings.CurveDrawable" project="Drawings" 
+    file="/Drawings/src/drawings/CurveDrawable.java" binary="false">    
+    <position x="414" y="603" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <interface id="10" corner="BOTTOM_RIGHT" language="java" name="drawings.Curve" project="Drawings" 
+    file="/Drawings/src/drawings/Curve.java" binary="false">    
+    <position x="484" y="948" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </interface>  
+  <class id="13" corner="BOTTOM_RIGHT" language="java" name="drawings.ColoredDrawable" project="Drawings" 
+    file="/Drawings/src/drawings/ColoredDrawable.java" binary="false">    
+    <position x="212" y="611" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class id="14" corner="BOTTOM_RIGHT" language="java" name="drawings.FlowerModel" project="Drawings" 
+    file="/Drawings/src/drawings/FlowerModel.java" binary="false">    
+    <position x="599" y="659" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class id="15" corner="BOTTOM_RIGHT" language="java" name="drawings.Shape" project="Drawings" 
+    file="/Drawings/src/drawings/Shape.java" binary="false">    
+    <position x="623" y="263" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class id="16" corner="BOTTOM_RIGHT" language="java" name="drawings.DrawingsPanel" project="Drawings" 
+    file="/Drawings/src/drawings/DrawingsPanel.java" binary="false">    
+    <position x="344" y="356" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class id="17" corner="BOTTOM_RIGHT" language="java" name="drawings.CompositeDrawable" project="Drawings" 
+    file="/Drawings/src/drawings/CompositeDrawable.java" binary="false">    
+    <position x="180" y="356" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class id="18" corner="BOTTOM_RIGHT" language="java" name="drawings.StrokedDrawable" project="Drawings" 
+    file="/Drawings/src/drawings/StrokedDrawable.java" binary="false">    
+    <position x="765" y="356" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class id="19" corner="BOTTOM_RIGHT" language="java" name="drawings.Rectangle" project="Drawings" 
+    file="/Drawings/src/drawings/Rectangle.java" binary="false">    
+    <position x="480" y="356" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class id="20" corner="BOTTOM_RIGHT" language="java" name="drawings.DefaultSettings" project="Drawings" 
+    file="/Drawings/src/drawings/DefaultSettings.java" binary="false">    
+    <position x="321" y="263" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <interface id="21" corner="BOTTOM_RIGHT" language="java" name="drawings.Drawable" project="Drawings" 
+    file="/Drawings/src/drawings/Drawable.java" binary="false">    
+    <position x="610" y="439" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </interface>  
+  <class id="22" corner="BOTTOM_RIGHT" language="java" name="drawings.TriangleTree" project="Drawings" 
+    file="/Drawings/src/drawings/TriangleTree.java" binary="false">    
+    <position x="157" y="439" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class id="23" corner="BOTTOM_RIGHT" language="java" name="drawings.CircleTree" project="Drawings" 
+    file="/Drawings/src/drawings/CircleTree.java" binary="false">    
+    <position x="285" y="439" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class id="24" corner="BOTTOM_RIGHT" language="java" name="drawings.Circle" project="Drawings" 
+    file="/Drawings/src/drawings/Circle.java" binary="false">    
+    <position x="602" y="356" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class id="25" corner="BOTTOM_RIGHT" language="java" name="drawings.Triangle" project="Drawings" 
+    file="/Drawings/src/drawings/Triangle.java" binary="false">    
+    <position x="907" y="356" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <association>    
+    <end type="SOURCE" nodeId="20" navigable="false">      
+      <attribute name="settings"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" nodeId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization>    
+    <end type="SOURCE" nodeId="17"/>    
+    <end type="TARGET" nodeId="21"/>  
+  </realization>  
+  <association>    
+    <end type="SOURCE" nodeId="17" navigable="false">      
+      <attribute name="drawables"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" nodeId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization>    
+    <end type="SOURCE" nodeId="19"/>    
+    <end type="TARGET" nodeId="21"/>  
+  </realization>  
+  <realization>    
+    <end type="SOURCE" nodeId="25"/>    
+    <end type="TARGET" nodeId="21"/>  
+  </realization>  
+  <realization>    
+    <end type="SOURCE" nodeId="18"/>    
+    <end type="TARGET" nodeId="21"/>  
+  </realization>  
+  <generalization>    
+    <end type="SOURCE" nodeId="23"/>    
+    <end type="TARGET" nodeId="17"/>  
+  </generalization>  
+  <realization>    
+    <end type="SOURCE" nodeId="13"/>    
+    <end type="TARGET" nodeId="21"/>  
+  </realization>  
+  <association>    
+    <end type="SOURCE" nodeId="16" navigable="false">      
+      <attribute name="drawables"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" nodeId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <end type="SOURCE" nodeId="13" navigable="false">      
+      <attribute name="drawable"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" nodeId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <end type="SOURCE" nodeId="19"/>    
+    <end type="TARGET" nodeId="15"/>  
+  </generalization>  
+  <realization>    
+    <end type="SOURCE" nodeId="7"/>    
+    <end type="TARGET" nodeId="21"/>  
+  </realization>  
+  <realization>    
+    <end type="SOURCE" nodeId="14"/>    
+    <end type="TARGET" nodeId="10"/>  
+  </realization>  
+  <realization>    
+    <bendpoint x="673" y="335"/>    
+    <end type="SOURCE" nodeId="15"/>    
+    <end type="TARGET" nodeId="21"/>  
+  </realization>  
+  <generalization>    
+    <end type="SOURCE" nodeId="24"/>    
+    <end type="TARGET" nodeId="15"/>  
+  </generalization>  
+  <association>    
+    <end type="SOURCE" nodeId="7" navigable="false">      
+      <attribute name="curve"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" nodeId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <end type="SOURCE" nodeId="18" navigable="false">      
+      <attribute name="drawable"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" nodeId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization>    
+    <end type="SOURCE" nodeId="24"/>    
+    <end type="TARGET" nodeId="21"/>  
+  </realization>  
+  <generalization>    
+    <end type="SOURCE" nodeId="22"/>    
+    <end type="TARGET" nodeId="17"/>  
+  </generalization>  
+  <classifier-display autosize="true" package="true" initial-value="false" signature="true" visibility="true">    
+    <attributes public="false" package="false" protected="false" private="false"/>    
+    <operations public="false" package="false" protected="false" private="false"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
