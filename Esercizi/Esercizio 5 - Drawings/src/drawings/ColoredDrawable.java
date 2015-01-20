@@ -4,10 +4,10 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- * E' una classe che funge da decorator. Partendo da un Drawable, gli viene
- * assegnato il colore. Al momento della chiamata di draw, verrà chiamata la
- * funzione specifica di disegno del drawable, ma verrà colorata con il colore
- * assegnato.
+ * E' una classe decorator. Assegna un colore ad un Drawable.
+ * Al momento della chiamata di draw, chiama la
+ * funzione specifica di disegno del particolare tipo di drawable,
+ * utilizzando come impostazione di colore quello assegnato.
  * 
  * @author Claudio
  * 
@@ -25,7 +25,7 @@ public class ColoredDrawable implements Drawable {
 
 	/**
 	 * Questo metodo Draw disegna il drawable secondo le sue particolari
-	 * istruzioni, settando però prima il colore al colore scelto nel
+	 * istruzioni, settando perï¿½ prima il colore al colore scelto nel
 	 * ColoredDrawable. Dopo il disegno si cura anche di ripristinare il colore
 	 * di default con la chiamata ai DefaultSettings.
 	 */
