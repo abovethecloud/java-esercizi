@@ -42,12 +42,9 @@ public class CompositeTest {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// Aggiungo il pannello al frame e setto la visibilità
-		frame.setVisible(true);
-
 		frame.getContentPane().add(panel);
-		frame.repaint();
+		frame.setVisible(true);
 		
-
 		/* ATTENZIONE: setVisible !!!
 		 * Il comando setVisible non solo rende visibile il pannello, ma disegna
 		 * anche tutte le componenti chiamando il metodo paintComponent del
@@ -57,6 +54,18 @@ public class CompositeTest {
 		 * dando le istruzioni per il disegno delle componenti del pannello.
 		 * 
 		 */
+		
+		/*
+		 * ATTENZIONE: panel.updateUI panel.updateUI chiama nuovamente il metodo
+		 * paintComponent di JPanel (o figlio). In questo modo è possibile fare
+		 * un "refresh del pannello una volta che il frame è già stato aperto e
+		 * settato a visible.
+		 */
+		panel.updateUI();
+		//panel.repaint();
+		//panel.validate();
+		//frame.repaint();
+		
 
 	}
 
