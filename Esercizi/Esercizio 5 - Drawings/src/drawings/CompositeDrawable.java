@@ -19,9 +19,9 @@ public class CompositeDrawable implements Drawable {
 	private ArrayList<Drawable> drawables = new ArrayList<Drawable>();
 
 	/**
-	 * Il costruttore di default è da inserire necessariamente in maniera
-	 * esplicita perché altrimenti qualunque classe che estenda questa classe
-	 * padre, non troverà il costruttore di default per inizializzare la classe
+	 * Il costruttore di default va inserito necessariamente in maniera
+	 * esplicita perche' altrimenti qualunque classe che estenda questa classe
+	 * padre, non trovera' il costruttore di default per inizializzare la classe
 	 * padre.
 	 */
 	public CompositeDrawable() {
@@ -29,10 +29,11 @@ public class CompositeDrawable implements Drawable {
 	}
 
 	/**
-	 * Costruttore aggiunto da Claudio. Può servire per impostare a priori
+	 * Costruttore aggiunto da Claudio. Puo' servire per impostare a priori
 	 * l'ArrayList di drawables.
 	 * 
 	 * @param drawables
+	 * @author Claudio
 	 */
 	public CompositeDrawable(ArrayList<Drawable> drawables) {
 		super();
@@ -50,7 +51,9 @@ public class CompositeDrawable implements Drawable {
 	}
 
 	/**
-	 * Disegna, uno ad uno, tutti i Drawable contenuti nell'ArrayList
+	 * Disegna, uno ad uno, tutti i Drawable contenuti nell'ArrayList.
+	 * Dichiarare l'Override non Ã¨ necessario, visto che si tratta del metodo
+	 * astratto di un'interfaccia
 	 */
 	@Override
 	public void draw(Graphics graphics) {

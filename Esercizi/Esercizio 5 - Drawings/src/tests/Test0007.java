@@ -11,6 +11,8 @@ import drawings.SpiralModel;
 /**
  * Lancia una Finestra e ci Disegna
  * un Fiore, una goccia ed una Spirale
+ * 
+ * @author Claudio
  */
 public class Test0007 {
 

@@ -6,9 +6,10 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 /**
- * Questa classe estende JPanel e vi aggiunge qualche funzione utile al disegno: un ArrayList di Drawables e un override di paintComponent
+ * Questa classe estende JPanel e vi aggiunge qualche funzione utile al disegno:
+ * un ArrayList di Drawables e un override di paintComponent
  * 
- * @author claudio
+ * @author Claudio
  *
  */
 public class DrawingsPanel extends JPanel{

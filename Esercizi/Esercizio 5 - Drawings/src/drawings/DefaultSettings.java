@@ -3,8 +3,13 @@ package drawings;
 import java.awt.Color;
 
 /**
+ * Classe che funge da Singleton. Istanzia un ed un solo oggetto per questa
+ * classe di tipo statico. E' utilizzata per conservare alcuni settings di
+ * default, ovvero LARGHEZZA (1) e COLORE (NERO). I settings verranno utilizzati
+ * per modificare il tipo Graphics
  * 
- * @author Alessandro
+ * 
+ * @author Claudio
  *
  * @see ColoredDrawable
  * @see StrokedDrawable
@@ -14,7 +19,8 @@ public class DefaultSettings {
 	private static DefaultSettings settings = new DefaultSettings();
 
 	/**
-	 * Costruttore di default. Does nothing.
+	 * Costruttore di default. Non fa nulla di particolare, ma 
+	 * settings = new DefaultSettings() viene istanziato.
 	 */
 	private DefaultSettings() {
 	}
@@ -28,6 +34,10 @@ public class DefaultSettings {
 		return settings;
 	}
 
+	/*
+	 * Istanze delle caratteristiche del settings di base: LARGHEZZA: 1 COLORE:
+	 * NERO
+	 */
 	private int width = 1;
 	private Color color = Color.BLACK;
 

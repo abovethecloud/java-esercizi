@@ -25,7 +25,7 @@ public class ColoredDrawable implements Drawable {
 
 	/**
 	 * Questo metodo Draw disegna il drawable secondo le sue particolari
-	 * istruzioni, settando per� prima il colore al colore scelto nel
+	 * istruzioni, settando prima il colore al colore scelto nel
 	 * ColoredDrawable. Dopo il disegno si cura anche di ripristinare il colore
 	 * di default con la chiamata ai DefaultSettings.
 	 */
