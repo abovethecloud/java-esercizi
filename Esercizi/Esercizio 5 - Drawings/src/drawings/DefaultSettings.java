@@ -19,8 +19,8 @@ public class DefaultSettings {
 	private static DefaultSettings settings = new DefaultSettings();
 
 	/**
-	 * Costruttore di default. Non fa nulla di particolare, ma 
-	 * settings = new DefaultSettings() viene istanziato.
+	 * Costruttore di default. Non fa nulla di particolare, 
+	 * settings = new DefaultSettings() e' gia' istanziato.
 	 */
 	private DefaultSettings() {
 	}
@@ -45,6 +45,10 @@ public class DefaultSettings {
 		return width;
 	}
 
+	/**
+	 * Per poter modificare la larghezza "width" devo chiamare: DefaultSettings.getSettings().setWidth
+	 * @param width
+	 */
 	public void setWidth(int width) {
 		this.width = width;
 	}
@@ -53,6 +57,10 @@ public class DefaultSettings {
 		return color;
 	}
 
+	/**
+	 * Per poter modificare il colore "color" devo chiamare: DefaultSettings.getSettings().setColor
+	 * @param color
+	 */
 	public void setColor(Color color) {
 		this.color = color;
 	}
