@@ -24,7 +24,7 @@ public class Test0001 {
 		frame.setDefaultCloseOperation(
 				JFrame.EXIT_ON_CLOSE);
 		
-		// Questo metodo add, chimato dentro a getContentPane è ciò che "mette" il pannello nel frame
+		// Questo metodo add, chimato dentro a getContentPane e' cio' che "mette" il pannello nel frame
 		frame.getContentPane().add(panel);
 		frame.setVisible(true);
 	}
