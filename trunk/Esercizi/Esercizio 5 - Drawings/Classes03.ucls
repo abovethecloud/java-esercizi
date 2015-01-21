@@ -1,88 +1,109 @@
-<class-diagram version="1.0.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.8" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true">  
-  <class id="1" corner="BOTTOM_RIGHT" language="java" name="drawings.ColoredDrawable" project="Drawings" 
-    file="/Drawings/src/drawings/ColoredDrawable.java" binary="false">    
-    <position x="111" y="115" width="-1" height="-1"/>    
-    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
-      <attributes public="false" package="false" protected="false" private="false"/>      
-      <operations public="false" package="false" protected="false" private="false"/>    
+  <class id="1" language="java" name="drawings.FlowerModel" project="Esercizio 5 - Drawings" 
+    file="/Esercizio 5 - Drawings/src/drawings/FlowerModel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="676" y="436"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <interface id="2" corner="BOTTOM_RIGHT" language="java" name="drawings.Drawable" project="Drawings" 
-    file="/Drawings/src/drawings/Drawable.java" binary="false">    
-    <position x="289" y="96" width="-1" height="-1"/>    
-    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
-      <attributes public="false" package="false" protected="false" private="false"/>      
-      <operations public="false" package="false" protected="false" private="false"/>    
+  <interface id="2" language="java" name="drawings.Drawable" project="Esercizio 5 - Drawings" 
+    file="/Esercizio 5 - Drawings/src/drawings/Drawable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="461" y="103"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </interface>  
-  <class id="3" corner="BOTTOM_RIGHT" language="java" name="drawings.Rectangle" project="Drawings" 
-    file="/Drawings/src/drawings/Rectangle.java" binary="false">    
-    <position x="374" y="227" width="-1" height="-1"/>    
-    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
-      <attributes public="false" package="false" protected="false" private="false"/>      
-      <operations public="false" package="false" protected="false" private="false"/>    
+  <class id="3" language="java" name="drawings.SpiralModel" project="Esercizio 5 - Drawings" 
+    file="/Esercizio 5 - Drawings/src/drawings/SpiralModel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="824" y="436"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="4" corner="BOTTOM_RIGHT" language="java" name="drawings.Circle" project="Drawings" 
-    file="/Drawings/src/drawings/Circle.java" binary="false">    
-    <position x="289" y="281" width="-1" height="-1"/>    
-    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
-      <attributes public="false" package="false" protected="false" private="false"/>      
-      <operations public="false" package="false" protected="false" private="false"/>    
+  <interface id="4" language="java" name="drawings.Curve" project="Esercizio 5 - Drawings" 
+    file="/Esercizio 5 - Drawings/src/drawings/Curve.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="824" y="265"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="5" language="java" name="drawings.CurveDrawable" project="Esercizio 5 - Drawings" 
+    file="/Esercizio 5 - Drawings/src/drawings/CurveDrawable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="465" y="265"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="6" corner="BOTTOM_RIGHT" language="java" name="drawings.Triangle" project="Drawings" 
-    file="/Drawings/src/drawings/Triangle.java" binary="false">    
-    <position x="218" y="225" width="-1" height="-1"/>    
-    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
-      <attributes public="false" package="false" protected="false" private="false"/>      
-      <operations public="false" package="false" protected="false" private="false"/>    
+  <class id="6" language="java" name="drawings.ColoredDrawable" project="Esercizio 5 - Drawings" 
+    file="/Esercizio 5 - Drawings/src/drawings/ColoredDrawable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="199" y="192"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="7" corner="BOTTOM_RIGHT" language="java" name="java.awt.Color" project="Drawings" 
-    file="/usr/lib/jvm/java-6-openjdk/jre/lib/rt.jar" binary="true">    
-    <position x="112" y="35" width="-1" height="-1"/>    
-    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
-      <attributes public="false" package="false" protected="false" private="false"/>      
-      <operations public="false" package="false" protected="false" private="false"/>    
+  <class id="7" language="java" name="drawings.DropModel" project="Esercizio 5 - Drawings" 
+    file="/Esercizio 5 - Drawings/src/drawings/DropModel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="966" y="436"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <realization>    
-    <end type="SOURCE" nodeId="6"/>    
-    <end type="TARGET" nodeId="2"/>  
+  <realization id="8">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="4"/>  
   </realization>  
-  <realization>    
-    <end type="SOURCE" nodeId="3"/>    
-    <end type="TARGET" nodeId="2"/>  
+  <realization id="9">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="2"/>  
   </realization>  
-  <realization>    
-    <end type="SOURCE" nodeId="4"/>    
-    <end type="TARGET" nodeId="2"/>  
+  <realization id="10">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="2"/>  
   </realization>  
-  <association>    
-    <end type="SOURCE" nodeId="1" navigable="false">      
-      <attribute name="drawable"/>      
-      <multiplicity minimum="0" maximum="1"/>    
+  <association id="11">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="12" name="drawable"/>      
+      <multiplicity id="13" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" nodeId="2" navigable="true"/>    
+    <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association>    
-    <end type="SOURCE" nodeId="1" navigable="false">      
-      <attribute name="color"/>      
-      <multiplicity minimum="0" maximum="1"/>    
+  <association id="14">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="15" name="curve"/>      
+      <multiplicity id="16" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" nodeId="7" navigable="true"/>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization>    
-    <end type="SOURCE" nodeId="1"/>    
-    <end type="TARGET" nodeId="2"/>  
+  <realization id="17">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="4"/>  
   </realization>  
-  <classifier-display autosize="true" package="true" initial-value="false" signature="true" visibility="true">    
-    <attributes public="false" package="false" protected="false" private="false"/>    
-    <operations public="false" package="false" protected="false" private="false"/>  
+  <realization id="18">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="false" package="false" protected="false" private="false" static="true"/>    
+    <operations public="false" package="false" protected="false" private="false" static="true"/>  
   </classifier-display>  
   <association-display labels="true" multiplicity="true"/>
 </class-diagram>
