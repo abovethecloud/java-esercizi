@@ -35,8 +35,7 @@ public class CurveDrawable implements Drawable {
 	 * Tl;Dr: determino due punti della curva inserendo i parametri (ad es. compresi tra 0 e 1)
 	 * nell'equazione caratteristica della curva, e traccio un segmento che li congiunga.
 	 * In pratica approssimo la curva a segmenti. Piu' segmenti, piu' precisione.
-	 * 
-	 * @param
+	 *
 	 */
 	@Override
 	public void draw(Graphics graphics) {

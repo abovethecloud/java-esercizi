@@ -7,8 +7,8 @@ public class CircleTree extends CompositeDrawable {
 	public CircleTree(int x, int y, int radius, int baseLength, int height,
 			Color color1, Color color2) {
 		
-		super(); // In realtà questa chiamata di super() viene fatta in
-					// automatico, perchéla classe figlia DEVE necessariamente
+		super(); // In realta' questa chiamata di super() viene fatta in
+					// automatico, perche' la classe figlia DEVE necessariamente
 					// istanziare un'oggetto della classe padre.
 
 		Rectangle rectangle = new Rectangle(x - (baseLength >> 1), y - height,
