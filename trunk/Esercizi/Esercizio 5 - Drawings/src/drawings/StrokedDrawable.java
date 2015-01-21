@@ -32,7 +32,8 @@ public class StrokedDrawable implements Drawable {
 	 * Cambia le impostazioni di "graphics", trasformandolo in tipo Graphics2D e
 	 * aggiungendo l'effetto pennello (che resterà memorizzato in graphics e
 	 * diverrà visibile se presente al momento della chiamata di draw
-	 * (generalmente dovuta ad un paintComponent)
+	 * (generalmente dovuta ad un paintComponent))
+	 * Dopo aver chiamato il metodo draw, riprende i settings originali.
 	 */
 	@Override
 	public void draw(Graphics graphics) {
