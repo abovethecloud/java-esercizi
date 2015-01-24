@@ -1,89 +1,70 @@
 package drawings;
 
-import java.awt.Color;
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * Implementare un componente CompositeDrawableBuilder munito di una funzionalità che consenta di convertire 
- * una Stringa in un Elemento Disegnabile.
- * 
- * NOTA : non c'è scritto di fare un Drawable. 
- * 
- * NOTA (2) : Per chi guarda questa soluzione a partire da Dicembre; riflettere
- * su come questa classe soddisfa il principio OCP, e su come implementa i Design Pattern
- * Bridge e (per chi legge dalla metà di Dicembre) Builder
- * 
- * @author Alessandro
- */
-public class CompositeDrawableBuilder {
-
-	private IDrawableBuilder builder;
+public class CompositeDrawableBuilder implements Drawable{
 	
-	private HashMap<String, IDrawableGenerator> generators=new HashMap<String, IDrawableGenerator>();
-
-	private HashMap<String, Color> colors=new HashMap<String, Color>();
 	
-	public CompositeDrawableBuilder(IDrawableBuilder builder) {
+	
+	private String string, splittedString[];
+	private String sType, sColor;
+	private ArrayList<String> sParameters = new ArrayList<String>();
+	private HashMap<String, Drawable> map = new HashMap<String, Drawable>();
+	
+	private Drawable drawable;
+	
+	
+	public String getString() {
+		return string;
+	}
+
+	public void setString(String string) {
+		this.string = string;
+	}
+
+	public Drawable getDrawable() {
+		return drawable;
+	}
+
+	public void setDrawable(Drawable drawable) {
+		this.drawable = drawable;
+	}
+
+	public CompositeDrawableBuilder(String string) {
 		super();
-		this.builder = builder;
-	}
-
-	public void addGenerator(String name,IDrawableGenerator generator){
-		generators.put(name, generator);
-	}
-
-	public void addColor(String name,Color color){
-		colors.put(name, color);
+		this.string = string;
 	}
 	
 	/**
-	 * una funzionalità che consenta di convertire 
-	 * una Stringa in un Elemento Disegnabile
-	 * 
-	 * Nota: imparare a leggere questo genere di frasi e a
-	 * tradurle correttamente in metodi!!
-	 * 
-	 * @param description "una Stringa"
-	 * @return "un Elemento Disegnabile"
+	 * Per convertire la stringa utilizzo il metodo di string".split", che
+	 * restituisce un vettore di stringhe divise dal(dai) token.
 	 */
-	public Drawable build(String description){
+	public void convertString() {
 		
-		/* FASE 1
-		 * L'interfaccia 'IDrawableBuilder' è utilizzata
-		 * per astrarre sul modo in cui la stringa di descrizione 
-		 * viene interpretata. Questo è un passaggio essenziale 
-		 * per risolvere il Test0012
-		 */
-		//Chiedo al modulo astratto di interpretarmi la descrizione
-		builder.setDescription(description);
+		// Assegno il vettore contenenete i frammenti di string.
+		this.splittedString = this.string.split(" ");
 		
-		//Recupero (dal modulo astratto) la Stringa che descrive il colore
-		String colorName=builder.getColor();
-		
-		//Recupero (dal modulo astratto) la Stringa che descrive il nome del Drawable
-		String drawableName=builder.getDrawableName();
-		
-		//Recupero (dal modulo astratto) la lista dei parametri
-		ArrayList<String> parameters=builder.getParameters();
-		
-		/* FASE 2
-		 * Costruire il Drawable
-		 * 
-		 * Nota: l'HashMap combinata all'interfaccia 'IDrawableGenerator'
-		 * è un modo efficace di evitare una catena di 'if-else' (impossibile utilizzare
-		 * lo switch sulle stringhe) che sarebbe inadeguata perchè poco riconfigurabile
-		 */
-		IDrawableGenerator generator=generators.get(drawableName);
-		
-		//creo il Drawable
-		Drawable drawable=generator.generate(parameters);
-		
-		Color color=colors.get(colorName);
-		
-		//creo la versione colorata del Drawable
-		ColoredDrawable coloredDrawable=new ColoredDrawable(color, drawable);
-		
-		return coloredDrawable;
+		// Setto separatmente i noti sType e sColor e
+		// aggiungo parametri all'ArrayList sParameters
+			this.sType = splittedString[0];
+			this.sColor = splittedString[1];
+			
+			for (int i = 2; i < splittedString.length; i++) {
+				this.sParameters.add(splittedString[i]);
+			}
+
+			map.put("Cerchio", new Circle(50, 50, 20));
+			
+			drawable=map.get(sType);
+			
 	}
+
+	@Override
+	public void draw(Graphics graphics) {
+		drawable.draw(graphics);
+		
+	}
+
 }
