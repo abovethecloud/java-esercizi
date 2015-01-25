@@ -5,10 +5,10 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import drawings.BuilderDrawable1;
 import drawings.DirectorBuilderDrawable;
 import drawings.Drawable;
 import drawings.DrawingsPanel;
+import drawings.builders.BuilderDrawable1;
 import drawings.generators.CircleGenerator;
 
 public class Test0011 {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.8" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true">  
-  <class id="1" language="java" name="drawings.BuilderDrawable1" project="Esercizio 5 - Drawings" 
-    file="/Esercizio 5 - Drawings/src/drawings/BuilderDrawable1.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="1" language="java" name="drawings.builders.BuilderDrawable1" project="Esercizio 5 - Drawings" 
+    file="/Esercizio 5 - Drawings/src/drawings/builders/BuilderDrawable1.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="328" y="689"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
