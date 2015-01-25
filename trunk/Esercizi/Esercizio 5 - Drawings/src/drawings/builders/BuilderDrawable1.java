@@ -1,6 +1,8 @@
-package drawings;
+package drawings.builders;
 
 import java.util.ArrayList;
+
+import drawings.IBuilderDrawable;
 
 /**
  * Un'implementazione concreta di un BuilderDrawable.
