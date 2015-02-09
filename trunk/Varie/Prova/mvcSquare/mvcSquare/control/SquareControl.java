@@ -34,9 +34,10 @@ public class SquareControl implements MouseListener, MouseMotionListener {
 		distX = xMouse - x;
 		distY = yMouse - y;
 		
-		System.out.println(xMouse);
-		System.out.println(x);
+		// System.out.println(xMouse);
+		// System.out.println(x);
 
+		// dragging = false;
 
 		/*
 		 * Controllo se il Mouse è all'interno del mio quadrato. Se lo è, salvo
