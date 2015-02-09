@@ -13,6 +13,7 @@ public class SquareControl implements MouseListener, MouseMotionListener {
 	private int distX, distY;
 	
 	public SquareControl(Square square) {
+		super();
 		this.square = square;
 	}
 	
@@ -28,25 +29,11 @@ public class SquareControl implements MouseListener, MouseMotionListener {
 		int yMouse = e.getY();
 
 		
-		distX = xMouse - x;
-		distY = yMouse - y;
 
-		distX = xMouse - x;
-		distY = yMouse - y;
-		
-		// System.out.println(xMouse);
-		// System.out.println(x);
 
-		// dragging = false;
-
-		/*
-		 * Controllo se il Mouse è all'interno del mio quadrato. Se lo è, salvo
-		 * la distanza del punto di pressione del mouse dai lati del quadrato
-		 */
-//		if ( (x<=xMouse && xMouse<=(x+l)) && (y<=yMouse && yMouse>=(y+l)) ) {
-//			dragging = true;
-//		}
-		if (xMouse >= x && xMouse <= (x+l) && yMouse >= y && yMouse <= (y+l)) {
+		if ( (xMouse >= x) && (xMouse <= (x+l)) && (yMouse >= y) && (yMouse <= (y+l))) {
+			distX = xMouse - x;
+			distY = yMouse - y;
 			dragging = true;
 		}
 		else
@@ -62,7 +49,7 @@ public class SquareControl implements MouseListener, MouseMotionListener {
 		int yMouse = e.getY();
 		
 		// Se sto trascinando, sposto le coordinate del quadrato
-		if (dragging = true) {
+		if (dragging) {
 			square.setX(xMouse - distX);
 			square.setY(yMouse - distY);
 			
