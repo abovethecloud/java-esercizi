@@ -19,7 +19,7 @@ public class mvcSquareTest {
 		squareView.addMouseMotionListener(squareControl);
 		
 		JFrame frame = new JFrame("SquareMVC");
-		frame.setSize(800, 800);
+		frame.setSize(300, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		frame.getContentPane().add(squareView);
