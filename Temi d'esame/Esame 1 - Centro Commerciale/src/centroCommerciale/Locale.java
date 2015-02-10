@@ -17,5 +17,9 @@ public class Locale {
 	public int getMetraturaLocale() {
 		return metraturaLocale;
 	}
+	
+	public void setMetraturaLocale(int metraturaLocale) {
+		this.metraturaLocale = metraturaLocale;
+	}
 
 }
