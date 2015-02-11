@@ -1,18 +1,26 @@
 package centroCommerciale;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
 
 public class CentroCommercialeDirector {
 
-	private HashMap<Attivita, Float> mapAttivitaRicavi = new HashMap<Attivita, Float>();
+	private HashMap<Attivita, Float> mapAttivitaGuadagno = new HashMap<Attivita, Float>();
 
-	public void addAttivitaERicavo(Attivita attivita, float ricavo) {
-		mapAttivitaRicavi.put(attivita, ricavo);
+	public void addGuadagnoAttivita(Attivita attivita, float ricavo) {
+		float guadagno = ricavo - attivita.costo(ricavo);
+		mapAttivitaGuadagno.put(attivita, guadagno);
 	}
 
-	public void calcolaGuadagniTOT() {
-		// TODO
+	public float calcolaGuadagniTOT() {
+		Set<Attivita> set = mapAttivitaGuadagno.keySet();
+	
+		float guadagnoTOT = 0;
+		
+		for (Attivita attivita : set) {
+			guadagnoTOT += mapAttivitaGuadagno.get(attivita);
+		}
+		return guadagnoTOT;
 	}
 
 }
