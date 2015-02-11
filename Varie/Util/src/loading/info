@@ -1,0 +1,14 @@
+
+Questo pacchetto realizza i componenti necessari alla lettura di file testuali
+e al caricamento delle informazioni in opportune strutture dati. Contiene:
+
+- un FileLoader che legge riga per riga il file e delega ad un algoritmo
+  atratto (l'Interpreter) la corretta acquisizione e il caricamento
+  
+- una interfaccia Interpreter che interpreta stringhe
+
+- un CSVToAcademicCareer implements Interpreter (componente di prova)
+
+- un FileChecker che controlla se il file su cui il loader lavora è cambiato.
+  Quando questo avviene la procedura viene rilanciata. Questo componente deve
+  dipendere dalla struttura dati target per azzerarlo ad ogni realoading
