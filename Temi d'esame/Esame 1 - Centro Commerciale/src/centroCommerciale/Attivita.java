@@ -2,6 +2,17 @@ package centroCommerciale;
 
 import java.util.ArrayList;
 
+/**
+ * La classe Attivita contiene tutti i parametri utili per un'attivita, comprese
+ * tutte le variabili per la metratura. Contiene un ArrayList di Locale (altra
+ * classe contenente la metratura del locale). Assegnando Locali ad un'Attivita
+ * andiamo a modificare la metratura dell'Attivita. E' una classe astratta. Il
+ * metodo costo viene implementato diversamente per AttivitaCommerciale e
+ * Servizio utilizzando il parametro del ricavato (venduto) giornaliero.
+ * 
+ * @author claudio
+ *
+ */
 public abstract class Attivita {
 	
 	// Nome dell'attivita'
@@ -48,6 +59,10 @@ public abstract class Attivita {
 		getCostoMetratura();
 	}
 	
+	public ArrayList<Locale> getLocali() {
+		return locali;
+	}
+	
 	public float getMetraturaTOT() {
 		return metraturaTOT;
 	}
@@ -69,11 +84,16 @@ public abstract class Attivita {
 	public void setCostoFisso(float costoFisso) {
 		this.costoFisso = costoFisso;
 	}
-
-	public ArrayList<Locale> getLocali() {
-		return locali;
-	}
 	
+	/**
+	 * Metodo astratto da implementare nelle classi derivate
+	 * 
+	 * @param ricavato
+	 *            Rappresenta il ricavato giornaliero, ovvero il venduto. Le
+	 *            AttivitaCommerciale devono tenere conto che il 60% del venduto
+	 *            è un costo (di acquisto della merce)
+	 * @return Il costo totale per quest'Attivita nel giorno
+	 */
 	public abstract float costo(float ricavato);
 
 }
