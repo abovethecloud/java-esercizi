@@ -39,6 +39,10 @@ public class CampoBuilderConcrete implements ICampoBuilder{
 		return new Casella(colonna, riga);
 	}
 	
+	public void reset() {
+		// TODO Auto-generated method stub
+
+	}
 	
 	//Metodo da buttare
 //	private TreeSet<int[]> setMine(int dim_campo, int num_mine) {

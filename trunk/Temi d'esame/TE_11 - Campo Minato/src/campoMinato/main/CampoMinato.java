@@ -1,6 +1,9 @@
 package campoMinato.main;
 
+import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -40,6 +43,15 @@ public class CampoMinato {
 	
 			// Creo e aggiiungo il pulsante di Nuova Partita
 			JButton button = new JButton("Nuova Partita");
+//			button.addActionListener(new ActionListener() {
+//				
+//				@Override
+//				public void actionPerformed(ActionEvent e) {
+//					campo.buildCampoDiCaselle();
+//					
+//				}
+//			});
+			button.setPreferredSize(new Dimension(250, 100));
 			panel.add(button);
 			
 			// Creo l'area di testo per le comunicazioni
