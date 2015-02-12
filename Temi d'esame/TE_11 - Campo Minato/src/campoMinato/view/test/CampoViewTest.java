@@ -32,12 +32,10 @@ public class CampoViewTest {
 	public static void main(String[] args) {
 		// Creo il campo:
 		Campo campo = new Campo(new CampoBuilderConcrete());
-		try {
-			campo.getCampoDiCaselle()[1][2].setClicked(true);	// Le caselle 2-3 e 3-2 
-			campo.getCampoDiCaselle()[2][1].setClicked(true);	// (qui a fianco) sono le uniche cliccate
-		} catch (LostException e) {
-			e.printStackTrace();
-		}
+
+		campo.getCampoDiCaselle()[1][2].setClicked(true);	// Le caselle 2-3 e 3-2 
+		campo.getCampoDiCaselle()[2][1].setClicked(true);	// (qui a fianco) sono le uniche cliccate
+
 		campo.getCampoDiCaselle()[2][1].setFlag(true);	// Non dovrebbe mostrare nulla, la flag si vede solo se la casella non è cliccata
 		campo.getCampoDiCaselle()[2][1].setMine(true);	// Dovrebbe mostrare la mina
 		campo.getCampoDiCaselle()[2][3].setFlag(true);	// Dovrebbe mostrare la bandiera
