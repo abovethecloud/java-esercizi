@@ -61,7 +61,16 @@ public class Campo extends Observable{
 	}
 	
 	public void reset() {
-		buildCampoDiCaselle();
+		for (int i = 0; i < dim_campo; i++) { // Righe
+			for (int j = 0; j < dim_campo; j++) { // Colonne
+				campoDiCaselle[i][j].setClicked(false);
+				campoDiCaselle[i][j].setFlag(false);
+				campoDiCaselle[i][j].setPerso(false);
+
+			}
+		}
+		setChanged();
+		notifyObservers();
 	}
 	
 	/**
@@ -119,16 +128,11 @@ public class Campo extends Observable{
 		if (casella.getNumeroMineAdiacenti() == 0) {
 			for ( int i = (riga-1>=0)? riga-1 : 0    ; i <= riga+1 && i < dim_campo; i++) {	// Righe
 				for ( int j = (colonna-1>=0)? colonna-1 : 0    ; j <= colonna+1 && j < dim_campo; j++) {	// Colonne
-					try {
-						if (campoDiCaselle[i][j].isClicked() == false) {
-							campoDiCaselle[i][j].setClicked(true);
-							cliccaCaselleAdiacenti(campoDiCaselle[i][j]);
-						}
-						
-					} catch (LostException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}		
+					if (campoDiCaselle[i][j].isClicked() == false) {
+						campoDiCaselle[i][j].setClicked(true);
+						cliccaCaselleAdiacenti(campoDiCaselle[i][j]);
+					}
+					
 				}
 			}
 		}

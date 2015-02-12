@@ -35,6 +35,7 @@ public class Casella extends Observable {
 	private boolean clicked = false;
 	private boolean flag = false;
 	private boolean mine = false;
+	private boolean perso = false;
 
 	private int numeroMineAdiacenti = 1;
 
@@ -139,12 +140,12 @@ public class Casella extends Observable {
 	 * @throws LostException
 	 *             Eccezione che si verifca al click su una mina: SCONFITTA
 	 */
-	public void setClicked(boolean clicked) throws LostException {
+	public void setClicked(boolean clicked){
 		this.clicked = clicked;
 		setChanged();
 		notifyObservers();
 		if (mine)
-			throw new LostException("PERSO");
+			perso = true;
 	}
 
 	public boolean isFlag() {
@@ -206,6 +207,15 @@ public class Casella extends Observable {
 	
 	public int getNumeroMineAdiacenti() {
 		return numeroMineAdiacenti;
+	}
+	
+
+	public boolean isPerso() {
+		return perso;
+	}
+	
+	public void setPerso(boolean perso) {
+		this.perso = perso;
 	}
 
 	/**
