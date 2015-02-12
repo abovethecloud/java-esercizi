@@ -203,6 +203,10 @@ public class Casella extends Observable {
 		setChanged();
 		notifyObservers();
 	}
+	
+	public int getNumeroMineAdiacenti() {
+		return numeroMineAdiacenti;
+	}
 
 	/**
 	 * Disegna la casella con tutti i suoi possibili parametri. Controlla se la

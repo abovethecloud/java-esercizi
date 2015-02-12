@@ -4,6 +4,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Observable;
 
+import javax.swing.JOptionPane;
+
 import campoMinato.exceptions.LostException;
 import campoMinato.model.AssociaPosizioneACasella;
 import campoMinato.model.Campo;
@@ -32,7 +34,7 @@ public class CampoController extends Observable implements MouseListener{
 	public void mouseClicked(MouseEvent e) {
 		int xMouse = e.getX();
 		int yMouse = e.getY();
-		
+				
 		Casella casellaCliccata = associatore.cheCasella(xMouse, yMouse);
 		
 		if (e.getButton() == 1) {
@@ -45,7 +47,16 @@ public class CampoController extends Observable implements MouseListener{
 				setChanged();
 				notifyObservers();
 				System.out.println(messaggio);
+				
+				JOptionPane.showMessageDialog(null, messaggio, "OOPS...", JOptionPane.ERROR_MESSAGE);
+				campo.buildCampoDiCaselle();
 			}
+			/*
+			 * Dopo aver premuto su una casella, invoco il metodo di campo che
+			 * permette, se si tratta di uno 0, di aprire tutte le caselle
+			 * adiacenti (in maniera ricorsiva
+			 */
+			campo.cliccaCaselleAdiacenti(casellaCliccata);
 		}
 		if (e.getButton() == 3) {
 			casellaCliccata.changeFlag();

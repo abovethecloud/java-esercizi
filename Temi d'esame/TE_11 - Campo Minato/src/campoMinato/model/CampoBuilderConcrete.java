@@ -15,8 +15,9 @@ public class CampoBuilderConcrete implements ICampoBuilder{
 
 	Random random = new Random();
 	
-	int dim_campo;
-	int num_mine;
+	private int dim_campo;
+	private int num_mine;
+	
 	
 	@Override
 	public Casella[][] generaCampo(int dim, int num_mine) {
