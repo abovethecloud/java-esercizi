@@ -49,7 +49,7 @@ public class CampoMinato {
 			
 
 		// Istanzio il frame
-		JFrame frame = new JFrame("CasellaViewTest");
+		JFrame frame = new JFrame("Campo Minato");
 		frame.setSize(600, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(new GridLayout(1, 2));

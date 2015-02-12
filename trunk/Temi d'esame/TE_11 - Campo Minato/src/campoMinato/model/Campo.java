@@ -3,6 +3,8 @@ package campoMinato.model;
 import java.awt.Graphics;
 import java.util.Observable;
 
+import campoMinato.exceptions.LostException;
+
 /**
  * Il Campo è un Observable. E' anche il Director di un DP Builder. La
  * generazione del campo viene delegata a un Builder di interfaccia
@@ -29,7 +31,6 @@ public class Campo extends Observable{
 		super();
 		this.builder = builder;
 		buildCampoDiCaselle();
-		settaMineAdiacenti();
 	}
 
 	/**
@@ -53,9 +54,14 @@ public class Campo extends Observable{
 	public void buildCampoDiCaselle() {
 		// Chiamo il builder concreto
 		this.campoDiCaselle = builder.generaCampo(dim_campo, num_mine);
+		settaMineAdiacenti();
 		
 		setChanged();
 		notifyObservers();
+	}
+	
+	public void reset() {
+		buildCampoDiCaselle();
 	}
 	
 	/**
@@ -103,6 +109,30 @@ public class Campo extends Observable{
 				campoDiCaselle[i][j].setNumeroMineAdiacenti(numeroMine);
 			}
 		}
+
+	}
+	
+	public void cliccaCaselleAdiacenti(Casella casella) {
+		int riga = casella.getRiga();
+		int colonna = casella.getColonna();
+		
+		if (casella.getNumeroMineAdiacenti() == 0) {
+			for ( int i = (riga-1>=0)? riga-1 : 0    ; i <= riga+1 && i < dim_campo; i++) {	// Righe
+				for ( int j = (colonna-1>=0)? colonna-1 : 0    ; j <= colonna+1 && j < dim_campo; j++) {	// Colonne
+					try {
+						if (campoDiCaselle[i][j].isClicked() == false) {
+							campoDiCaselle[i][j].setClicked(true);
+							cliccaCaselleAdiacenti(campoDiCaselle[i][j]);
+						}
+						
+					} catch (LostException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}		
+				}
+			}
+		}
+		
 
 	}
 	
