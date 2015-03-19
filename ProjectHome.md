@@ -1,0 +1,1 @@
+Esercizi di programmazione in Java in merito alla programmazione ad ogetti studiata durante il corso di Fondamenti di Informatica II.
