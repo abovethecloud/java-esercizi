@@ -8,24 +8,19 @@ import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.nio.charset.Charset;
 
-public class BooksService {
+public class BooksService implements IService{
+	
+	private static final String filename = "web/books02.html";
 
 	public void sendHTTP(final Socket clientSocket,
-			String filename) throws IOException,
+			HttpRequest request) throws IOException,
 			FileNotFoundException {
-		OutputStreamWriter out = new 
-			OutputStreamWriter(
-					clientSocket.getOutputStream(),
-					Charset.forName("UTF-8").newEncoder()
-			);
-		out.write("HTTP/1.1 200 OK\n");
-		out.write("Date: Tue, 17 Mar 2014 14:47:00\n");
-		out.write("Content-Type: text/html; charset=utf-8\n");
-		out.write("\n");
-			copyFile(filename, out);
-		out.write("\n");
 		
-		out.close();
+		HttpMessage message = new HttpMessage();
+		
+		message.openHttpAnswer(clientSocket);
+		copyFile(filename, message.getOut());
+		message.closeHttpRequest();
 	}
 
 	public void copyFile(String filename,
