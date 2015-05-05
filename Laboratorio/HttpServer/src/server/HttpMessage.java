@@ -9,7 +9,7 @@ import java.nio.charset.Charset;
  * Le chiamate a 'openHttpAnswer' devono sempre essere seguite da chiamate a
  * closeHttpAnswer
  * 
- * @author cl410940
+ * @author claudio
  * 
  */
 public class HttpMessage {

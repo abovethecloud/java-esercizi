@@ -10,6 +10,13 @@ import java.net.Socket;
 
 import server.HttpMessage.ContentType;
 
+/**
+ * Among all the possible IServices, FileService is the one that handle the copy
+ * of a file to the OutputStream.
+ * 
+ * @author claudio
+ *
+ */
 public class FileService implements IService {
 
 	/**
@@ -57,7 +64,7 @@ public class FileService implements IService {
 			out.write(fileLine + "\n");
 			fileLine = fileReader.readLine();
 		}
-
+		fileReader.close();
 	}
 
 	/**
@@ -65,21 +72,12 @@ public class FileService implements IService {
 	 * restituisce error.html
 	 * 
 	 * @param uri
-	 * @return
+	 *            The URI of the requested file, relative to the "web" folder of
+	 *            this project
+	 * @return the String filename, the path of the file including "web/"
 	 */
 	private String checkURI(String uri) {
 		String filename = "web" + uri;
-		// File webFolder=new File("web");
-		// File[] files=webFolder.listFiles();
-		// boolean found=false;
-		// for (int i = 0; i < files.length; i++) {
-		// if(files[i].getName().endsWith(filename)){
-		// found=true;
-		// }
-		// }
-		// if(!found){
-		// filename="web/error.html";
-		// }
 		File file = new File(filename);
 		if (!file.exists()) {
 			filename = "web/error.html";
