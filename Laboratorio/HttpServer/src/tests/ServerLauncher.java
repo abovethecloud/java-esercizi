@@ -1,4 +1,7 @@
-package server;
+package tests;
+
+import server.Server;
+import server.services.BooksService;
 
 
 public class ServerLauncher {

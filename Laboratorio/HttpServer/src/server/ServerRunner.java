@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.HashMap;
 
+import server.services.FileService;
+
 public class ServerRunner implements Runnable {
 	
 	private Socket clientSocket = null;

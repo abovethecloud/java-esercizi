@@ -1,4 +1,4 @@
-package server;
+package server.services;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -6,6 +6,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
+
+import server.HttpMessage;
+import server.HttpRequest;
+import server.IService;
 
 public class BooksService implements IService {
 

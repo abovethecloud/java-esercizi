@@ -1,4 +1,4 @@
-package server;
+package server.services;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,6 +8,9 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 
+import server.HttpMessage;
+import server.HttpRequest;
+import server.IService;
 import server.HttpMessage.ContentType;
 
 /**
