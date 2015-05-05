@@ -17,7 +17,7 @@ public class BooksService implements IService {
 		HttpMessage message = new HttpMessage();
 
 		message.openHttpAnswer(clientSocket);
-		copyFile(filename, message.getOut());
+		copyFile(filename, message.getOutputStreamWriter());
 		message.closeHttpRequest();
 	}
 

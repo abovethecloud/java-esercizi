@@ -31,10 +31,8 @@ public class ServerRunner implements Runnable {
 			/* Il thread resta in attesa di una richiesta HTTP. Quando arriva, "sblocca" questa istruzione. */
 			HttpRequest request = new HttpRequest(clientSocket);
 
-			// String filename = checkURI(uri); // TODO: A cosa serviva questa operazione?
-
 			/* A titolo di DEBUG stampiamo l'URI richiesto dal client */
-			System.err.println(request.getUri());
+			System.err.println("URI richiesto:\t"+request.getUri());
 
 			/*
 			 * Il server deve essere generico, dunque deve
@@ -42,7 +40,7 @@ public class ServerRunner implements Runnable {
 			 * default. Questo è il design Pattern STRATEGY.
 			 */
 			IService service = services.get(request.getUri());
-			if (service == null) {
+			if (service == null) {	// DEFAULT
 				service = new FileService();
 			}
 

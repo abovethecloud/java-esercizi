@@ -59,7 +59,7 @@ public class HttpMessage {
 		out.close();
 	}
 
-	public OutputStreamWriter getOut() {
+	public OutputStreamWriter getOutputStreamWriter() {
 		return out;
 	}
 

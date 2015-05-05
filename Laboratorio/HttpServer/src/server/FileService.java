@@ -20,8 +20,8 @@ import server.HttpMessage.ContentType;
 public class FileService implements IService {
 
 	/**
-	 * This method checks if the URI is valid and then answers the HTTP request,
-	 * accordingly to the type of content.
+	 * This method checks if the URI for the requested file is valid and then
+	 * answers the HTTP request sending it, according to the type of content.
 	 */
 	public void sendHTTP(final Socket clientSocket, HttpRequest request)
 			throws IOException, FileNotFoundException {
@@ -37,7 +37,7 @@ public class FileService implements IService {
 
 		// Answers the HTTP request sending the requested file
 		message.openHttpAnswer(clientSocket);
-		copyFile(filename, message.getOut());
+		copyFile(filename, message.getOutputStreamWriter());
 		message.closeHttpRequest();
 	}
 

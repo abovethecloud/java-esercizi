@@ -30,7 +30,6 @@ public class Server {
 	public void launch() {
 		try {
 			startThreadFromSocket();
-			// socket.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -44,10 +43,13 @@ public class Server {
 			Runnable runnable = new ServerRunner(clientSocket, services);
 			Thread thread = new Thread(runnable);
 			thread.start();
+			// socket.close();
+			// TODO: Come mai la socket non va chiusa? Perché interromperei le
+			// il thread. Probabilmente bisogna chiuderla nel thread.
 		}
+
 	}
-	
-	
+
 	/**
 	 * Adds to the services map another service
 	 * 
