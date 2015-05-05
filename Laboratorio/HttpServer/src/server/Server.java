@@ -1,15 +1,19 @@
 package server;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
 
+/**
+ * This is the central model class for the server.
+ * 
+ * @author claudio
+ *
+ */
 public class Server {
 
 	private HashMap<String, IService> services = new HashMap<String, IService>();
-
 	private int port;
 
 	public Server(int port) {
@@ -17,69 +21,42 @@ public class Server {
 	}
 
 	/**
-	 * Aggiunge alla mappa dei servizi disponibili un ulteriore servizio.
+	 * This is the method effectively launching the server. It uses both the
+	 * port number (to start the service) and the services map, to correctly
+	 * answer the client
 	 * 
-	 * @param name
-	 * @param service
+	 * @author claudio
 	 */
-	public void addService(String name, IService service) {
-		services.put(name, service);
-
-	}
-
 	public void launch() {
-
 		try {
-			ServerSocket socket = new ServerSocket(port);
-
-			while (true) {
-
-				final Socket clientSocket = socket.accept();
-
-				Runnable runnable = new Runnable() {
-					@Override
-					public void run() {
-
-						try {
-							HttpRequest request = new HttpRequest(clientSocket);
-
-							// String filename = checkURI(uri);
-
-							System.err.println(request.getUri());
-
-							/**
-							 * Il server deve essere generico, dunque deve
-							 * dipendere solo dalla classe FileService, che è il
-							 * default. Questo è il design Pattern STRATEGY.
-							 */
-							IService service = services.get(request.getUri());
-							if (service == null) {
-								service = new FileService();
-							}
-
-							service.sendHTTP(clientSocket, request);
-
-							clientSocket.close();
-						} catch (FileNotFoundException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						} catch (IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}
-				};
-				Thread thread = new Thread(runnable);
-				thread.start();
-
-			}
-
+			startThreadFromSocket();
 			// socket.close();
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
+	private void startThreadFromSocket() throws IOException {
+
+		ServerSocket socket = new ServerSocket(port);
+		while (true) {
+			Socket clientSocket = socket.accept();
+			Runnable runnable = new ServerRunner(clientSocket, services);
+			Thread thread = new Thread(runnable);
+			thread.start();
+		}
+	}
+	
+	
+	/**
+	 * Adds to the services map another service
+	 * 
+	 * @param name
+	 * @param service
+	 * 
+	 * @author claudio
+	 */
+	public void addService(String name, IService service) {
+		services.put(name, service);
+	}
 }
