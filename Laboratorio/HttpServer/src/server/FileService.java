@@ -14,9 +14,9 @@ public class FileService implements IService {
 			throws IOException, FileNotFoundException {
 		
 		String filename = checkURI(request.getUri());
-		
 		HttpMessage message = new HttpMessage();
 		message.openHttpAnswer(clientSocket);
+		
 		copyFile(filename, message.getOut());
 		message.closeHttpRequest();
 	}
