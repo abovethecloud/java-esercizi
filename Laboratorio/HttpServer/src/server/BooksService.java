@@ -7,42 +7,39 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 
-public class BooksService implements IService{
-	
+public class BooksService implements IService {
+
 	private static final String filename = "web/books02.html";
 
-	public void sendHTTP(final Socket clientSocket,
-			HttpRequest request) throws IOException,
-			FileNotFoundException {
-		
+	public void sendHTTP(final Socket clientSocket, HttpRequest request)
+			throws IOException, FileNotFoundException {
+
 		HttpMessage message = new HttpMessage();
-		
+
 		message.openHttpAnswer(clientSocket);
 		copyFile(filename, message.getOut());
 		message.closeHttpRequest();
 	}
 
-	public void copyFile(String filename,
-			OutputStreamWriter out)
+	public void copyFile(String filename, OutputStreamWriter out)
 			throws FileNotFoundException, IOException {
-		BufferedReader fileReader=new BufferedReader(
-			new FileReader(filename)
-		);
-		String fileLine=fileReader.readLine();
-		while(fileLine!=null){
-			if(fileLine.trim().equals("$LIBRERIA_LIBRI$")){
-				
+		BufferedReader fileReader = new BufferedReader(new FileReader(filename));
+		String fileLine = fileReader.readLine();
+		while (fileLine != null) {
+			if (fileLine.trim().equals("$LIBRERIA_LIBRI$")) {
+
 				out.write("<div style=\"background-color:#aaa;width:400px;margin:30px;\">");
 				out.write("<h2 style=\"background-color:#ddd;\">Harry Potter</h2>");
 				out.write("<b>J K. Rowling</b> <br/>");
 				out.write("Prezzo : 29.99 <br/>");
 				out.write("Anno : 2005 <br/>");
 				out.write("</div>");
-				
-			}else{
-				out.write(fileLine+"\n");
+
+			} else {
+				out.write(fileLine + "\n");
 			}
-			fileLine=fileReader.readLine();
+			fileLine = fileReader.readLine();
 		}
+		fileReader.close();
 	}
 }
