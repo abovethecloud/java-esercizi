@@ -6,34 +6,53 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 import java.util.LinkedList;
 
+/**
+ * This class reads and saves the lines of the HTTP request given the
+ * clientSocket. It provides tools to interact with tos lines, first of all the
+ * retrievement of the URI.
+ * 
+ * @author claudio
+ *
+ */
 public class HttpRequest {
 
 	private String uri;
+	LinkedList<String> requestLines = new LinkedList<String>();
 
-	public HttpRequest(final Socket clientSocket) throws IOException {
-		
-		super();
-		
+	public HttpRequest(Socket clientSocket) throws IOException {
+		readAndSaveRequestLines(clientSocket);
+		findUri();
+	}
+
+	private void readAndSaveRequestLines(Socket clientSocket)
+			throws IOException {
+
 		BufferedReader in = new BufferedReader(new InputStreamReader(
 				clientSocket.getInputStream()));
-		
+
 		String line = in.readLine();
-		String[] lineElements = line.split(" ");
-		String uri = lineElements[1];
-		
-		LinkedList<String> lines = new LinkedList<String>();
+		this.requestLines.add(line);
+
 		while (line != null) {
-			// System.out.println(line);
-			lines.add(line);
 			line = in.readLine();
-			if (line.length() == 0) {
+			this.requestLines.add(line);
+
+			if (line.length() == 0)
 				line = null;
-			}
 		}
+	}
+
+	// The URI is the second element of the first line of the request
+	private void findUri() {
+		String firstLine = requestLines.getFirst();
+		String[] lineElements = firstLine.split(" ");
+		String uri = lineElements[1];
+
 		this.uri = uri;
 	}
 
 	public String getUri() {
 		return uri;
 	}
+
 }
