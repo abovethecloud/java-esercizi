@@ -23,7 +23,7 @@ public class TestXML {
 			DocumentBuilder builder = dbFactory.newDocumentBuilder();
 			Document doc = builder.parse(fileXML);
 			
-			NodeList booksList = doc.getElementsByTagName("books");
+			NodeList booksList = doc.getElementsByTagName("book");
 			
 			for (int i = 0; i < booksList.getLength(); i++) {
 				

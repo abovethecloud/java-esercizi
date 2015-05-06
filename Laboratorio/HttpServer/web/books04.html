@@ -29,7 +29,7 @@ function myFunction() {
     var text = "";
 
     for(var i=0;i<elencoLibri.length;i++){
-	text = text + ""+i+"<br >";
+	text = text + ""+elencoLibri[i].firstChild.nextSibling.firstChild.nodeValue+"<br >";
     }
 
     libreria.innerHTML = text;
