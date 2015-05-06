@@ -7,14 +7,15 @@ import java.nio.charset.Charset;
 import java.util.Date;
 
 /**
- * Le chiamate a 'openHttpAnswer' devono sempre essere seguite da chiamate a
- * closeHttpAnswer
+ * This class is the one in charge of opening and closing the HTTP messages.
+ * Calls of 'openHttpAnswer' must always be followed by calls to
+ * 'closeHttpAnswer'
  * 
  * @author claudio
  * 
  */
 public class HttpMessage {
-	
+
 	private ContentType contentType = ContentType.HTML; // Default content
 	private OutputStreamWriter out;
 
@@ -34,7 +35,8 @@ public class HttpMessage {
 				Charset.forName("UTF-8").newEncoder());
 		out.write("HTTP/1.1 200 OK\n");
 		out.write("Date: " + (new Date()).toString() + "\n");
-		out.write("Content-Type: " + contentType.getText() + "; charset=utf-8\n");
+		out.write("Content-Type: " + contentType.getText()
+				+ "; charset=utf-8\n");
 		out.write("\n");
 
 	}

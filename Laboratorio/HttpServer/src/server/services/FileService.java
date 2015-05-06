@@ -22,10 +22,6 @@ import server.IService;
  */
 public class FileService implements IService {
 
-	/**
-	 * This method checks if the URI for the requested file is valid and then
-	 * answers the HTTP request sending it, according to the type of content.
-	 */
 	public void sendHTTP(Socket clientSocket, HttpRequest request)
 			throws IOException, FileNotFoundException {
 

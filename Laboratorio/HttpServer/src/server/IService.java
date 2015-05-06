@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.net.Socket;
 
 /**
- * Generico servizio
- * 
- * TODO: Rivedere Javadoc
+ * Generic Service.
+ * The services may include: sending of html pages, file
+ * transfers, music streaming, login services and so on..
  * 
  * @author Claudio
  * 
@@ -14,13 +14,10 @@ import java.net.Socket;
 public interface IService {
 
 	/**
-	 * TODO: fissare il 'filename', sostituirlo con il componente
-	 * 'RichiestaHttp'.
-	 * 
-	 * Non ha molto senso dichiarare il lancio di una FileNotFoundException,
-	 * perché non è detto che ogni richiesta abbia a che fare con i file. Ha
-	 * invece senso mantenere il lancio dell'eccezione IOException (che è anche
-	 * classe padre della FileNotFound).
+	 * This method must check if the URI for the requested file/service is valid
+	 * and then answers the HTTP request sending an HttpMessage (header and
+	 * closing included) with the appropriate content. If the URI is not
+	 * recogniesed, it readdress to the default page.
 	 */
 	public void sendHTTP(final Socket clientSocket, HttpRequest request)
 			throws IOException;

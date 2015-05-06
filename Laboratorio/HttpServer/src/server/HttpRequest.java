@@ -24,6 +24,15 @@ public class HttpRequest {
 		findUri();
 	}
 
+	/**
+	 * All the lines of the client's HTTP request are saved in a List to prevent
+	 * information loss
+	 * 
+	 * @param clientSocket
+	 *            The socket reserved to the client
+	 * @throws IOException
+	 *             if an error occurs while reading the HTTP request
+	 */
 	private void readAndSaveRequestLines(Socket clientSocket)
 			throws IOException {
 
@@ -36,13 +45,15 @@ public class HttpRequest {
 		while (line != null) {
 			line = in.readLine();
 			this.requestLines.add(line);
-			
+
 			if (line.length() == 0)
 				line = null;
 		}
 	}
 
-	// The URI is the second element of the first line of the request
+	/**
+	 * The URI is the second element of the first line of the request.
+	 */
 	private void findUri() {
 		String firstLine = requestLines.getFirst();
 		String[] lineElements = firstLine.split(" ");
@@ -54,7 +65,7 @@ public class HttpRequest {
 	public String getUri() {
 		return uri;
 	}
-	
+
 	public LinkedList<String> getRequestLines() {
 		return requestLines;
 	}

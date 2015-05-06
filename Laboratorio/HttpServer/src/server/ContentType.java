@@ -1,7 +1,7 @@
 package server;
 
 /**
- * This enum contains all the possible content types for the HTTP response
+ * This enum contains all the possible content types for the HTTP response.
  * 
  * @author claudio
  *
