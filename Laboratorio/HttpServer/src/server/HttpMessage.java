@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.nio.charset.Charset;
+import java.util.Date;
 
 /**
  * Le chiamate a 'openHttpAnswer' devono sempre essere seguite da chiamate a
@@ -35,7 +36,7 @@ public class HttpMessage {
 	 * and avilability of the type in the enumeration
 	 * 
 	 * @param clientSocket
-	 *            the socket for the client
+	 *            the socket reserved for the client connection
 	 * @throws IOException
 	 *             when unable to write on the OutputStream
 	 */
@@ -44,7 +45,7 @@ public class HttpMessage {
 		this.out = new OutputStreamWriter(clientSocket.getOutputStream(),
 				Charset.forName("UTF-8").newEncoder());
 		out.write("HTTP/1.1 200 OK\n");
-		out.write("Date: Tue, 17 Mar 2014 14:47:00\n");
+		out.write("Date: " + (new Date()).toString() + "\n");
 		out.write("Content-Type: " + contentType.text + "; charset=utf-8\n");
 		out.write("\n");
 

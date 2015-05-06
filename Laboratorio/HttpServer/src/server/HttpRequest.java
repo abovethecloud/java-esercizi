@@ -17,7 +17,7 @@ import java.util.LinkedList;
 public class HttpRequest {
 
 	private String uri;
-	LinkedList<String> requestLines = new LinkedList<String>();
+	private LinkedList<String> requestLines = new LinkedList<String>();
 
 	public HttpRequest(Socket clientSocket) throws IOException {
 		readAndSaveRequestLines(clientSocket);
@@ -36,6 +36,9 @@ public class HttpRequest {
 		while (line != null) {
 			line = in.readLine();
 			this.requestLines.add(line);
+			
+			/* ------ DEBUG ------ */
+			System.err.println(line);
 
 			if (line.length() == 0)
 				line = null;
@@ -53,6 +56,10 @@ public class HttpRequest {
 
 	public String getUri() {
 		return uri;
+	}
+	
+	public LinkedList<String> getRequestLines() {
+		return requestLines;
 	}
 
 }

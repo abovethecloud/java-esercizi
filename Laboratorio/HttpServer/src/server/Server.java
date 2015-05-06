@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 /**
  * This is the central model class for the server.
+ * To launch the server in any other class, there must be a call to the launch() method.
  * 
  * @author claudio
  *
@@ -38,8 +39,9 @@ public class Server {
 	private void startThreadFromSocket() throws IOException {
 
 		ServerSocket socket = new ServerSocket(port);
+		Socket clientSocket;
 		while (true) {
-			Socket clientSocket = socket.accept();
+			clientSocket = socket.accept();
 			Runnable runnable = new ServerRunner(clientSocket, services);
 			Thread thread = new Thread(runnable);
 			thread.start();
@@ -51,7 +53,7 @@ public class Server {
 	}
 
 	/**
-	 * Adds to the services map another service
+	 * Adds another service to the services map
 	 * 
 	 * @param name
 	 * @param service

@@ -17,12 +17,12 @@ public class ServerRunner implements Runnable {
 		if (clientSocket != null)
 			this.clientSocket = clientSocket;
 		else
-			System.err.println("clientSocket nulla! C'è un problema.");
+			System.err.println("clientSocket NULL! C'è un problema.");
 		
 		if (services != null)
 			this.services = services;
 		else
-			System.err.println("services è NULL.");
+			System.err.println("services punta a NULL.");
 	}
 
 	@Override
@@ -30,7 +30,8 @@ public class ServerRunner implements Runnable {
 		
 		try {
 			
-			/* Il thread resta in attesa di una richiesta HTTP. Quando arriva, "sblocca" questa istruzione. */
+			/* Il thread resta in attesa di una richiesta HTTP. Quando arriva, "sblocca" questa istruzione.
+			 * A questo punto vengono salvate tutte le linee della richiesta Http. */
 			HttpRequest request = new HttpRequest(clientSocket);
 
 			/* A titolo di DEBUG stampiamo l'URI richiesto dal client */
@@ -50,10 +51,8 @@ public class ServerRunner implements Runnable {
 
 			clientSocket.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
