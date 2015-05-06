@@ -37,9 +37,6 @@ public class HttpRequest {
 			line = in.readLine();
 			this.requestLines.add(line);
 			
-			/* ------ DEBUG ------ */
-			System.err.println(line);
-
 			if (line.length() == 0)
 				line = null;
 		}
