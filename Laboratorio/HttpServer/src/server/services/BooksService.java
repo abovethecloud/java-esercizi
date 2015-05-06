@@ -22,7 +22,7 @@ public class BooksService implements IService {
 
 		message.openHttpAnswer(clientSocket);
 		copyFile(filename, message.getOutputStreamWriter());
-		message.closeHttpRequest();
+		message.closeHttpAnswer();
 	}
 
 	public void copyFile(String filename, OutputStreamWriter out)

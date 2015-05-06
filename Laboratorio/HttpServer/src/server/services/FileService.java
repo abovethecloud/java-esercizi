@@ -41,7 +41,7 @@ public class FileService implements IService {
 		// Answers the HTTP request sending the requested file
 		message.openHttpAnswer(clientSocket);
 		copyFile(filename, message.getOutputStreamWriter());
-		message.closeHttpRequest();
+		message.closeHttpAnswer();
 	}
 
 	/**

@@ -43,7 +43,7 @@ public class HttpMessage {
 		this.contentType = contentType;
 	}
 
-	public void closeHttpRequest() throws IOException {
+	public void closeHttpAnswer() throws IOException {
 		out.write("\n");
 		out.close();
 	}
