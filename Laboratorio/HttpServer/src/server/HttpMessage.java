@@ -14,20 +14,8 @@ import java.util.Date;
  * 
  */
 public class HttpMessage {
-
-	// This enum contains all the possible content types of the response
-	public enum ContentType {
-		HTML("text/html"),
-		XML("text/xml");
-
-		private String text;
-
-		private ContentType(String text) {
-			this.text = text;
-		}
-	}
-
-	private ContentType contentType = ContentType.HTML;
+	
+	private ContentType contentType = ContentType.HTML; // Default content
 	private OutputStreamWriter out;
 
 	/**
@@ -46,7 +34,7 @@ public class HttpMessage {
 				Charset.forName("UTF-8").newEncoder());
 		out.write("HTTP/1.1 200 OK\n");
 		out.write("Date: " + (new Date()).toString() + "\n");
-		out.write("Content-Type: " + contentType.text + "; charset=utf-8\n");
+		out.write("Content-Type: " + contentType.getText() + "; charset=utf-8\n");
 		out.write("\n");
 
 	}

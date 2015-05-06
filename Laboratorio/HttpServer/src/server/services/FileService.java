@@ -8,10 +8,10 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 
+import server.ContentType;
 import server.HttpMessage;
 import server.HttpRequest;
 import server.IService;
-import server.HttpMessage.ContentType;
 
 /**
  * Among all the possible IServices, FileService is the one that handle the copy
@@ -26,7 +26,7 @@ public class FileService implements IService {
 	 * This method checks if the URI for the requested file is valid and then
 	 * answers the HTTP request sending it, according to the type of content.
 	 */
-	public void sendHTTP(final Socket clientSocket, HttpRequest request)
+	public void sendHTTP(Socket clientSocket, HttpRequest request)
 			throws IOException, FileNotFoundException {
 
 		String filename = checkURI(request.getUri());
