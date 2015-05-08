@@ -1,6 +1,8 @@
-package model;
+package model.solvers;
 
 import java.util.ArrayList;
+
+import model.ISolver;
 
 /**
  * This class is a model for the solution of an equation like:

@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 
 import model.ISolver;
-import model.LinearEquationSolver;
-import model.QuadraticEquationSolver;
+import model.solvers.LinearEquationSolver;
+import model.solvers.QuadraticEquationSolver;
 
 import org.junit.Test;
 

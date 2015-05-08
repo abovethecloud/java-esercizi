@@ -1,6 +1,8 @@
-package model;
+package model.solvers;
 
 import java.util.ArrayList;
+
+import model.ISolver;
 
 /**
  * Equation like: a*x^2 + b*x + c = 0
