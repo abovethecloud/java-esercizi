@@ -2,6 +2,8 @@ package model;
 
 import java.util.ArrayList;
 
+import model.exceptions.EquationException;
+
 /**
  * Interface for different solvers. Different solvers solve different types of
  * equations
@@ -23,6 +25,6 @@ public interface ISolver {
 	 *            ArrayList that contains all the possbile solutions from the
 	 *            smallest to the greatest
 	 */
-	public void solve(ArrayList<Double> data, ArrayList<Double> solution);
+	public void solve(ArrayList<Double> data, ArrayList<Double> solution) throws EquationException;
 
 }

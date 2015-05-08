@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 
 import model.ISolver;
+import model.exceptions.EquationException;
 import model.solvers.LinearEquationSolver;
 import model.solvers.QuadraticEquationSolver;
 
@@ -34,7 +35,11 @@ public class EquationSolveTest {
 		data.add(b);
 		data.add(a);
 		
-		solver.solve(data, solution);
+		try {
+			solver.solve(data, solution);
+		} catch (EquationException e) {
+			e.printStackTrace();
+		}
 		System.out.println("Soluzione Equazione Lineare:\n\t"+solution.get(0)+"\n");
 
 		if (solution.get(0) != 5)
@@ -43,7 +48,7 @@ public class EquationSolveTest {
 	}
 	
 	@Test
-	public void testQuadraticSolve() throws Exception {
+	public void testQuadraticSolve() {
 		data.clear();
 		solution.clear();
 		
@@ -55,7 +60,11 @@ public class EquationSolveTest {
 		data.add(b);
 		data.add(a);
 		
-		solver.solve(data, solution);
+		try {
+			solver.solve(data, solution);
+		} catch (EquationException e) {
+			e.printStackTrace();
+		}
 		System.out.println("Soluzioni Equazione Quadratica:\n\tx1 = "+solution.get(0)+"\n\tx2 = "+solution.get(1)+"\n");
 		
 		if (solution.get(0) != -1 || solution.get(1) != 4)
