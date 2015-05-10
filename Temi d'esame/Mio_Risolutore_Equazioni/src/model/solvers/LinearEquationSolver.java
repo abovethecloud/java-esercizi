@@ -14,12 +14,13 @@ import model.exceptions.EquationException;
 public class LinearEquationSolver implements ISolver {
 
 	private double a = 0, b = 0;
+	private double solution[] = new double[1];
 
 	@Override
-	public void solve(ArrayList<Double> data, ArrayList<Double> solution)
+	public double[] solve(double[] data)
 			throws EquationException {
-		b = data.get(0);
-		a = data.get(1);
+		b = data[0];
+		a = data[1];
 
 		double x1 = 0;
 		if (a != 0)
@@ -31,9 +32,9 @@ public class LinearEquationSolver implements ISolver {
 				throw new EquationException("Impossible");
 		}
 
-		// Clear the solution list and put the result
-		solution.clear();
-		solution.add(x1);
+		solution[0] = x1;
+		
+		return solution;
 	}
 
 }

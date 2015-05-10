@@ -25,6 +25,6 @@ public interface ISolver {
 	 *            ArrayList that contains all the possbile solutions from the
 	 *            smallest to the greatest
 	 */
-	public void solve(ArrayList<Double> data, ArrayList<Double> solution) throws EquationException;
+	public double[] solve(double[] data) throws EquationException;
 
 }

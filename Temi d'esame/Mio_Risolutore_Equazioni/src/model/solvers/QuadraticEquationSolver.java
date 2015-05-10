@@ -1,7 +1,5 @@
 package model.solvers;
 
-import java.util.ArrayList;
-
 import model.ISolver;
 import model.exceptions.EquationException;
 
@@ -14,18 +12,19 @@ import model.exceptions.EquationException;
 public class QuadraticEquationSolver implements ISolver {
 
 	double a = 0, b = 0, c = 0;
+	private double solution[] = new double[2];
+
 
 	@Override
-	public void solve(ArrayList<Double> data, ArrayList<Double> solution)
+	public double[] solve(double[] data)
 			throws EquationException {
-		c = data.get(0);
-		b = data.get(1);
-		a = data.get(2);
+		c = data[0];
+		b = data[1];
+		a = data[2];
 
 		if (a == 0) {
 			/* Se a == 0, risolvo linearmente */
-			(new LinearEquationSolver()).solve(data, solution);
-			return;
+			return (new LinearEquationSolver()).solve(data);
 		}
 
 		if (c == 0) {
@@ -33,12 +32,22 @@ public class QuadraticEquationSolver implements ISolver {
 			 * chiama la soluzione lineare dopo aver rimosso c dalla lista dei
 			 * coefficienti. Aggiunge anche la soluzione x = 0
 			 */
-			data.remove(0);
-			(new LinearEquationSolver()).solve(data, solution);
-			solution.add(0.0);
-			// TODO: A onor del vero qui si dovrebbe inserire lo 0 prima o dopo
-			// a seconda della dimensione dell'altra soluzione
-			return;
+			double[] linData = new double[2];
+			linData[0] = data[1];
+			linData[1] = data[2];
+			/*
+			 * TODO: A onor del vero qui si dovrebbe inserire lo 0 prima o dopo
+			 * a seconda della dimensione dell'altra soluzione
+			 */
+			solution[0] = 0;
+			solution[1] =  (new LinearEquationSolver()).solve(linData)[0];
+			
+			if (solution[0] > solution[1]) {
+				double tmp = solution[1];
+				solution[1] = solution[0];
+				solution[0] = tmp;
+			}
+			return solution;
 		}
 
 		double delta = Math.sqrt(Math.pow(b, 2) - 4 * a * c);
@@ -49,10 +58,10 @@ public class QuadraticEquationSolver implements ISolver {
 		double x1 = (-b - delta) / 2 * a;
 		double x2 = (-b + delta) / 2 * a;
 
-		solution.clear();
-		solution.add(x1);
-		solution.add(x2);
-
+		solution[0] = x1;
+		solution[1] = x2;
+		
+		return solution;
 	}
 
 }
