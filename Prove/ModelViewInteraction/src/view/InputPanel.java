@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 
 import model.Oggetto;
 
-public class PannelloStringa extends JPanel implements Observer {
+public class InputPanel extends JPanel implements Observer {
 
 	private static final long serialVersionUID = 0;
 	
@@ -36,7 +36,7 @@ public class PannelloStringa extends JPanel implements Observer {
 		
 	}
 	
-	public PannelloStringa(Oggetto oggettoDefault) {
+	public InputPanel(Oggetto oggettoDefault) {
 		super();
 		textField = new JTextField();
 		this.oggetto = oggettoDefault;

@@ -1,10 +1,11 @@
-package view;
+package main;
 
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import view.InputPanel;
 import model.Oggetto;
 
 public class Main {
@@ -17,7 +18,7 @@ public class Main {
 		JPanel mainPanel = new JPanel();
 		
 		Oggetto oggetto = new Oggetto();
-		PannelloStringa pannelloStringa = new PannelloStringa(oggetto);
+		InputPanel pannelloStringa = new InputPanel(oggetto);
 		
 		mainPanel.setLayout(new GridLayout(2,1));
 		mainPanel.add(pannelloStringa);
