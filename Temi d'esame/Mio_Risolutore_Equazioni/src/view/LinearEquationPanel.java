@@ -9,9 +9,14 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import model.IEquation;
+import model.LinearEquation;
+
 public class LinearEquationPanel extends JPanel {
 
 	private static final long serialVersionUID = 1;
+	
+	private IEquation equation = new LinearEquation();
 	
 	public LinearEquationPanel() {
 		super();
@@ -30,7 +35,6 @@ public class LinearEquationPanel extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO: Risolvi equazione
 				
 			}
 		});
