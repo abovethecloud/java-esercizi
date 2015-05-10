@@ -1,7 +1,5 @@
 package model.solvers;
 
-import java.util.ArrayList;
-
 import model.ISolver;
 import model.exceptions.EquationException;
 
@@ -17,8 +15,7 @@ public class LinearEquationSolver implements ISolver {
 	private double solution[] = new double[1];
 
 	@Override
-	public double[] solve(double[] data)
-			throws EquationException {
+	public double[] solve(double[] data) throws EquationException {
 		b = data[0];
 		a = data[1];
 
@@ -33,7 +30,7 @@ public class LinearEquationSolver implements ISolver {
 		}
 
 		solution[0] = x1;
-		
+
 		return solution;
 	}
 

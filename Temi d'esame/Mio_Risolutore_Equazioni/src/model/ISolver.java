@@ -1,7 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-
 import model.exceptions.EquationException;
 
 /**
@@ -25,6 +23,6 @@ public interface ISolver {
 	 *            ArrayList that contains all the possbile solutions from the
 	 *            smallest to the greatest
 	 */
-	public double[] solve(double[] data) throws EquationException;
+	public abstract double[] solve(double[] data) throws EquationException;
 
 }

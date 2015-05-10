@@ -14,10 +14,8 @@ public class QuadraticEquationSolver implements ISolver {
 	double a = 0, b = 0, c = 0;
 	private double solution[] = new double[2];
 
-
 	@Override
-	public double[] solve(double[] data)
-			throws EquationException {
+	public double[] solve(double[] data) throws EquationException {
 		c = data[0];
 		b = data[1];
 		a = data[2];
@@ -36,12 +34,12 @@ public class QuadraticEquationSolver implements ISolver {
 			linData[0] = data[1];
 			linData[1] = data[2];
 			/*
-			 * TODO: A onor del vero qui si dovrebbe inserire lo 0 prima o dopo
-			 * a seconda della dimensione dell'altra soluzione
+			 * inserisco le soluzioni nel vettore delle soluzioni nel giusto
+			 * ordine
 			 */
 			solution[0] = 0;
-			solution[1] =  (new LinearEquationSolver()).solve(linData)[0];
-			
+			solution[1] = (new LinearEquationSolver()).solve(linData)[0];
+
 			if (solution[0] > solution[1]) {
 				double tmp = solution[1];
 				solution[1] = solution[0];
@@ -51,7 +49,7 @@ public class QuadraticEquationSolver implements ISolver {
 		}
 
 		double delta = Math.sqrt(Math.pow(b, 2) - 4 * a * c);
-		
+
 		if (delta < 0)
 			throw new EquationException("Impossible. Delta < 0");
 
@@ -60,7 +58,7 @@ public class QuadraticEquationSolver implements ISolver {
 
 		solution[0] = x1;
 		solution[1] = x2;
-		
+
 		return solution;
 	}
 

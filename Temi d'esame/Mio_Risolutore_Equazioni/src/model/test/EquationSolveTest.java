@@ -1,9 +1,6 @@
 package model.test;
 
-import static org.junit.Assert.*;
-
-import java.util.ArrayList;
-
+import static org.junit.Assert.fail;
 import model.ISolver;
 import model.exceptions.EquationException;
 import model.solvers.LinearEquationSolver;
