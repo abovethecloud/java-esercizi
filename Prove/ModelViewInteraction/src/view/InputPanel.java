@@ -16,7 +16,7 @@ public class InputPanel extends JPanel {
 	private ProxyOggetto oggetto;
 	private JTextField textField;
 
-	public class KeyAdapterPanel implements KeyListener {
+	public class ContnutoKeyAdapter implements KeyListener {
 
 		@Override
 		public void keyTyped(KeyEvent e) {
@@ -39,6 +39,6 @@ public class InputPanel extends JPanel {
 		this.setLayout(new GridLayout(1, 1));
 		this.add(textField);
 
-		textField.addKeyListener(new KeyAdapterPanel());
+		textField.addKeyListener(new ContnutoKeyAdapter());
 	}
 }
