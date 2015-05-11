@@ -28,8 +28,8 @@ public class EquationSolveTest {
 
 		double a=(-1), b=5;
 		System.out.println("Equazione Lineare:\n\t"+a+"*x + "+b+" = 0");
-		data[0] = b;
-		data[1] = a;
+		data[0] = a;
+		data[1] = b;
 		
 		try {
 			solution = solver.solve(data);
@@ -51,9 +51,9 @@ public class EquationSolveTest {
 		
 		double a = 1, b = -3, c = -4;
 		System.out.println("Equazione Quadratica:\n\t"+a+"*x^2 + "+b+"*x + "+c+" = 0");
-		data[0] = c;
+		data[2] = c;
 		data[1] = b;
-		data[2] = a;
+		data[0] = a;
 		
 		try {
 			solution = solver.solve(data);

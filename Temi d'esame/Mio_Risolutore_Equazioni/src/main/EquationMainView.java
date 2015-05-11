@@ -1,18 +1,29 @@
-package view.test;
+package main;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.Action;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-import view.LinearEquationPanel;
+import model.LinearEquation;
+import model.ProxyEquation;
+import model.SolutionPanel;
+import view.InputPanel;
+import view.MenuEquation;
+import view.OutputPanel;
 
 public class EquationMainView {
 
 	public static void main(String[] args) {
+		
+		// Dichiarazione di un'equazione con defualt LINEARE
+		ProxyEquation proxyEquation = new ProxyEquation();
 
 		// Creazione del frame, settings relativi e panel principale
 		JFrame equationFrame = new JFrame("Equation Frame");
@@ -22,18 +33,20 @@ public class EquationMainView {
 
 		// Creazione del menu di scelta e aggiunta al frame
 		JMenuBar menuBar = new JMenuBar();
-		JMenu equationsMenu = new JMenu("Menu");
-		JMenuItem provaMenuItem = new JMenuItem("prova");
-		equationsMenu.add(provaMenuItem);
-		menuBar.add(equationsMenu);
+		MenuEquation menuEquation = new MenuEquation(proxyEquation);
+		menuBar.add(menuEquation);
 		equationFrame.setJMenuBar(menuBar);
 
 		// Creazione dei pannelli
-		LinearEquationPanel equationPanel = new LinearEquationPanel();
+		InputPanel inputPanel = new InputPanel(proxyEquation);
+		OutputPanel outputPanel = new OutputPanel(proxyEquation);
+		SolutionPanel solutionPanel = new SolutionPanel(proxyEquation);
 
 		// Aggiunta dei pannelli al pannello principale
-		mainPanel.setLayout(new GridLayout(1, 1));
-		mainPanel.add(equationPanel);
+		mainPanel.setLayout(new GridLayout(3, 1));
+		mainPanel.add(outputPanel);
+		mainPanel.add(inputPanel);
+		mainPanel.add(solutionPanel);
 
 		// Aggiunta del pannello al frame come contentPane()
 		equationFrame.getContentPane().add(mainPanel);

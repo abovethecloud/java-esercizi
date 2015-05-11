@@ -16,9 +16,9 @@ public class QuadraticEquationSolver implements ISolver {
 
 	@Override
 	public double[] solve(double[] data) throws EquationException {
-		c = data[0];
+		c = data[2];
 		b = data[1];
-		a = data[2];
+		a = data[0];
 
 		if (a == 0) {
 			/* Se a == 0, risolvo linearmente */

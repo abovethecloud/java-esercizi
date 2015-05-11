@@ -16,8 +16,8 @@ public class LinearEquationSolver implements ISolver {
 
 	@Override
 	public double[] solve(double[] data) throws EquationException {
-		b = data[0];
-		a = data[1];
+		b = data[1];
+		a = data[0];
 
 		double x1 = 0;
 		if (a != 0)

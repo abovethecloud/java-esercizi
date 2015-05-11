@@ -18,8 +18,8 @@ public class EquationTest {
 		double b = 5;
 		double a = -1;
 		
-		equation.setParameter(0, b);
-		equation.setParameter(1, a);
+		equation.setParameter(0, a);
+		equation.setParameter(1, b);
 		
 		try {
 			if (equation.solve()[0] != 5)
