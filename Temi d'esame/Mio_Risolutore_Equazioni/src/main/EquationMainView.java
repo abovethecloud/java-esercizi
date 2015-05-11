@@ -1,4 +1,4 @@
-package view.test;
+package main;
 
 import java.awt.GridLayout;
 
@@ -8,11 +8,16 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-import view.LinearEquationPanel;
+import model.ProxyEquation;
+import view.InputPanel;
+import view.OutputPanel;
 
 public class EquationMainView {
 
 	public static void main(String[] args) {
+		
+		// Dichiarazione di un'equazione con defualt LINEARE
+		ProxyEquation equation = new ProxyEquation();
 
 		// Creazione del frame, settings relativi e panel principale
 		JFrame equationFrame = new JFrame("Equation Frame");
@@ -29,11 +34,13 @@ public class EquationMainView {
 		equationFrame.setJMenuBar(menuBar);
 
 		// Creazione dei pannelli
-		LinearEquationPanel equationPanel = new LinearEquationPanel();
+		InputPanel inputPanel = new InputPanel(equation);
+		OutputPanel outputPanel = new OutputPanel(equation);
 
 		// Aggiunta dei pannelli al pannello principale
-		mainPanel.setLayout(new GridLayout(1, 1));
-		mainPanel.add(equationPanel);
+		mainPanel.setLayout(new GridLayout(2, 1));
+		mainPanel.add(outputPanel);
+		mainPanel.add(inputPanel);
 
 		// Aggiunta del pannello al frame come contentPane()
 		equationFrame.getContentPane().add(mainPanel);
