@@ -41,10 +41,13 @@ public class HttpRequest {
 
 		String line = in.readLine();
 		this.requestLines.add(line);
+		System.err.println(line); //TODO: Delete
 
 		while (line != null) {
 			line = in.readLine();
 			this.requestLines.add(line);
+			System.err.println(line);  //TODO: Delete
+
 
 			if (line.length() == 0)
 				line = null;

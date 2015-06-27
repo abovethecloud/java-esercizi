@@ -13,7 +13,7 @@ import server.services.BooksService;
  */
 public class ServerLauncher {
 
-	public static final int PORT = 4444;
+	public static final int PORT = 8080;
 
 	public static void main(String[] args) {
 
